@@ -32,17 +32,18 @@ const deserializeObject = () =>
 
 // Initialize object variable
 
-const tempObject = deserializeObject() != null ? deserializeObject() : {};
+let tempObject = deserializeObject() != null ? deserializeObject() : {};
 
-// Submit event 
+// Submit event
 
 const submitForm = () => {
   event.preventDefault();
   localStorage.clear();
   feedbackForm.reset();
   console.log(tempObject);
+  tempObject = {};
 };
- 
+
 // Main method (Start point)
 
 deserializeObject();
